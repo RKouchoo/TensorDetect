@@ -5,23 +5,19 @@ anything that has an '_' is tensorflow related
 anything that is camel case is networking/camera stuff
 '''
 
-
-import numpy as np
+# libraries
 import os
-import tensorflow as tf
 import cv2
-
-import Constants
-
-# PI camera stuff that has to be replaced later.
-from picamera.array import PiRGBArray
-from picamera.array import PiRGBAnalysis
-from picamera import PiCamera
-
 import sys
-import time
 
-# Import utilities
+import tensorflow as tf
+import numpy as np
+
+# our classes
+import Constants
+import SocketServer
+
+# Import tensor utilities
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from object_detection.utils import label_map_util
 
@@ -42,6 +38,7 @@ with detection_graph.as_default():
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
 categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes = Constants.tensor.NUM_CLASSES, use_display_name = True)
 category_index = label_map_util.create_category_index(categories)
+
 
 # Helper function for data format
 def load_image_into_numpy_array(image):
@@ -85,6 +82,7 @@ def detect_image_webcam(image, sess, detection_graph, debugDisplay):
 
   return image_np
 
+
 def detect_objects_coords(image_np, sess, detection_graph):
     # Define input
     image_np_expanded = np.expand_dims(image_np, axis = 0)
@@ -127,13 +125,11 @@ if (__name__ == '__main__'):
     with detection_graph.as_default():
         sess = tf.Session(graph = detection_graph, config = tf.ConfigProto(intra_op_parallelism_threads = Constants.machine.MACHINE_CONCURRENT_TENSORFLOW_THREADS))
 
-    # Loop through webcam frames
-    cam = PiCamera()
-    cam.awb_mode = 'off'
-    cam.awb_gains = (1.15, 2.46)
-    cam.exposure_mode = 'auto'
-    cam.framerate = 30
-    cam.rotation = 270
-    cam.shutter_speed = 10000
-    cam.resolution = (Constants.vision.CAMERA_WIDTH, Constants.vision.CAMERA_HEIGHT)
+    cap = cv2.videoCapture(Constants.vision.DEFAULT_CAMERA) # create a camera on the default port
+    run = True
 
+    # The main loop that gets the image capture
+    while run:
+        ret, img = cap.read() # get the latest image from the camera
+
+    cv2.VideoCapture.read(Constants.vision.DEFAULT_CAMERA)

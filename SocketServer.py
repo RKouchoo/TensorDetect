@@ -7,16 +7,16 @@ import socket
 
 
 class Connection():
-    def __init__(self, robotIP, robotPort, webTimeout, isRobotPresent):
+    def __init__(self, robotIP, robotPort, connectTimeout, autoStart):
         # Create a new thread
         threading.Thread.__init__(self)
 
         self.ROBOT_IP = robotIP
         self.ROBOT_PORT = robotPort
-        self.IS_ROBOT_PRESENT = isRobotPresent
-        self.WEB_TIMEOUT = webTimeout
+        self.SERVER_AUTO_START = autoStart
+        self.WEB_TIMEOUT = connectTimeout
 
-        if self.IS_ROBOT_PRESENT:
+        if self.SERVER_AUTO_START:
             self.start()
 
     # opens a connection to the robot based on the IP

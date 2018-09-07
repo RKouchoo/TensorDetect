@@ -13,6 +13,7 @@ class vision:
     CAMERA_WIDTH = 240
     CAMERA_HEIGHT = 320
 
+    DEFAULT_CAMERA = 0
 
 '''
 The class that stores the network constants
