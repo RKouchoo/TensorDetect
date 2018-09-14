@@ -15,7 +15,7 @@ import numpy as np
 
 # our classes
 import Constants
-import SocketServer
+import net.SocketServer
 
 # Import tensor utilities
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
