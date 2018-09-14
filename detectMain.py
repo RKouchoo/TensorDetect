@@ -22,8 +22,8 @@ sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from object_detection.utils import label_map_util
 
 # Define import paths
-PATH_TO_CKPT = 'output_inference_graph-1.4.1.pb/frozen_inference_graph.pb' # Import frozen model
-PATH_TO_LABELS = 'frc_label_map.pbtxt' # Import map of labels
+PATH_TO_CKPT = 'graphs/output_inference_graph-1.4.1.pb/frozen_inference_graph.pb' # Import frozen model
+PATH_TO_LABELS = 'graphs/frc_label_map.pbtxt' # Import map of labels
 
 # Load frozen model into memory
 detection_graph = tf.Graph()
