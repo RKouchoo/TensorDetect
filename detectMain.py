@@ -110,7 +110,7 @@ def detect_objects_coords(image_np, sess, detection_graph):
 
 
 def detect_image_coords(image_path, sess, detection_graph):
-    #Import image
+    # Import image
     image = cv2.imread(image_path)
     image = cv2.resize(image, (Constants.vision.CAMERA_WIDTH, Constants.vision.CAMERA_HEIGHT))
     image_np = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
