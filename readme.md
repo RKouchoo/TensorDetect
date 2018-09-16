@@ -9,6 +9,14 @@ A code set based off tensorflow to detect objects and return their object type a
 - sends data over lan in packets which can be decoded as a json string
 
 
+## REALISTIC TODO:
+- Clean up detection code
+- Make code modular and support detection for different objects
+- Write a wholesome training tutorial/script
+- Choose the best hardware platform that has a GPU (mobile quadcore i7 only pushes ~15fps whereas dual 980ti 6GB cards push 70+)
+  ((Needs to be compact so it can fit on a robot without a subteam war *sigh*.))
+
+
 ## TODO:
 - Implement object selection
 - Add more networking (send and recieveables via JSON)
