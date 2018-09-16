@@ -21,3 +21,6 @@ A code set based off tensorflow to detect objects and return their object type a
 - Python JSON serialisation to dictionary accessible to java:
 	`https://stackoverflow.com/questions/10252010/serializing-class-instance-to-json/10252138#10252138`
 	`data = json.dumps(myobject.__dict__)`
+
+- Object coordinates addins:
+	`https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/issues/69`
