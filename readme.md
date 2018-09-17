@@ -25,10 +25,11 @@ A code set based off tensorflow to detect objects and return their object type a
 
 ## Testing
 
-~20 FPS on a modern 6 core intel core i7 processor overclocked to 4GHz:
+#### ~20 FPS on a modern 6 core intel core i7 processor overclocked to 4GHz:
 ![alt text](https://image.ibb.co/ksNkwe/tensor_6core.png)
 
-
+#### ~30fps (video framerate) on dual GTX 980ti 6GB GPU's using 5GB of vram. live framerate should be around 90fps 
+![alt text](https://preview.ibb.co/kAEC9z/tensor_dualgpu.png)
 
 ### Notes:
 - Python JSON serialisation to dictionary accessible to java:
