@@ -23,6 +23,13 @@ A code set based off tensorflow to detect objects and return their object type a
 - Write auto trainer based on opencv (It is a very big hassle to run through all of the images on labelimg and to then train it)
 - Verify that we can have LED strip control to make it easier to track a retro-reflective goal and not changing camera parameters
 
+## Testing
+
+~20 FPS on a modern 6 core intel core i7 processor overclocked to 4GHz:
+![alt text](https://image.ibb.co/ksNkwe/tensor_6core.png)
+
+
+
 ### Notes:
 - Python JSON serialisation to dictionary accessible to java:
 	`https://stackoverflow.com/questions/10252010/serializing-class-instance-to-json/10252138#10252138`
